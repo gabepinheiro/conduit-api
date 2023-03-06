@@ -16,6 +16,6 @@ export const emailCodec = withMessage(
 
 export type Email = t.TypeOf<typeof emailCodec>
 
-function isEmail (value: string) {
-  return /^\w+.+?@\w+.?$/.test(value)
+export function isEmail (value: string) {
+  return /^\w+.+?@\w+.+?$/.test(value)
 }
