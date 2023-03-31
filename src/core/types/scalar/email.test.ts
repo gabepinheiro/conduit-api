@@ -15,7 +15,10 @@ describe('Scalar -> Email type', () => {
     pipe(
       'invalid-email',
       emailCodec.decode,
-      E.mapLeft(errors => expect(errors[0]?.message).toBe('Invalid Email')),
+      E.mapLeft(error => {
+        const errorMessage = Array.isArray(error) ? error[0]?.message : ''
+        expect(errorMessage).toBe('Invalid email')
+      }),
     )
   })
 })

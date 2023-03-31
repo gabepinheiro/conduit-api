@@ -12,7 +12,7 @@ export const urlCodec = withMessage(
     (value): value is t.Branded<string, UrlBrand> => isUrl(value),
     'Url',
   ),
-  () => 'Invalid Email',
+  () => 'Invalid URL',
 )
 
 export function isUrl (value: unknown) {
